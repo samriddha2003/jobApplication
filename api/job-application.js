@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const multer = require('multer');
 const path = require('path');
-const { VercelRequest, VercelResponse } = require('@vercel/node');
 
 // Initialize Express app
 const app = express();
@@ -10,7 +9,6 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "../public"))); // Serve static files
 
 // MongoDB Connection
 const mongoURI = "mongodb+srv://samriddhadas2003:RylM1eMJuXeykHkF@cluster0.2a3wj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
