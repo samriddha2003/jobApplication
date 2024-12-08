@@ -1,24 +1,16 @@
 {
     "version": 2,
     "builds": [
-      {
-        "src": "public/**/*",
-        "use": "@vercel/static"
-      },
-      {
-        "src": "api/**/*",
-        "use": "@vercel/node"
-      }
+        {
+            "src": "api/job-application.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "public/**/*",
+            "use": "@vercel/static"
+        }
     ],
     "routes": [
-      {
-        "src": "/apply",
-        "dest": "/api/apply.js"
-      },
-      {
-        "src": "/admin",
-        "dest": "/api/dashboard.js"
-      }
+        { "src": "/(.*)", "dest": "/api/job-application.js" }
     ]
-  }
-  
+}
